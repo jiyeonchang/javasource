@@ -19,7 +19,7 @@ import lombok.ToString;
 
 public class DeptDTO {
 	
-	private String deptno;
+	private int deptno;
 	private String dname;
 	private String loc;
 
