@@ -1,0 +1,29 @@
+package eaxm;
+
+import java.util.Scanner;
+
+public class Degrees {
+
+	public static void main(String[] args) {
+//	È­¾¾¿Âµµ =>¼·¾¾¿Âµµ 
+		
+//		Á¶°Ç
+		
+//		È­¾¾¿Âµµ ÀÔ·Â¹Þ±â(Á¤¼ö)
+//		¹ÞÀº È­¾¾¿Âµµ ¸¦ ¼·¾¾¿Âµµ·Î º¯È¯ÈÄ Ãâ·ÂÇÏ±â 
+//		(È­¾¾¿Âµµ -32)*5/9
+		Scanner K = new Scanner(System.in);
+	System.out.println("È­¾¾¿Âµµ ÀÔ·Â :");
+		int fireA = K.nextInt();
+		
+		double cels=(fireA-32)*5/9.0;
+		
+		System.out.println("¼·¾¾¿Âµµ : " +cels);
+		System.out.printf("¼·¾¾¿Âµµ : %.4f",cels);
+		
+		
+		
+	
+	}
+
+}
