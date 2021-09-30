@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import com.sun.xml.internal.ws.Closeable;
 
 public class DeptDAO {
-	//empdao static,Connection
+	//empdao static,Connection//
 	
 	static {
 		try {
