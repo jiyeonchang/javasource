@@ -166,6 +166,46 @@ public class DeptDAO {
 		}
 		return flag;
 	}
+	//delete from dept_temp shere deptno=?
+	//delete ()
+	
+	public boolean deleteEmp(int deptno) {
+		
+		Connection con = null;
+		PreparedStatement pstmt=null;
+		boolean deleteFlag = false;
+		try {
+			String sql = "delte from dept_temp shere deptno=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, deptno);
+			
+			int result = pstmt.executeUpdate();
+			if (result>0) {
+				deleteFlag = true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return deleteFlag;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
