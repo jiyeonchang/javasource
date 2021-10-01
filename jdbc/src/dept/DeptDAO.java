@@ -45,7 +45,7 @@ public class DeptDAO {
 			
 		while(rs.next()) {
 			DeptDTO dto = new DeptDTO();
-			dto.setDeptno(rs.getInt("deptno"));
+			dto.setDeptNo(rs.getInt("deptno"));
 			dto.setDname(rs.getString("dname"));
 			dto.setLoc(rs.getString("loc"));
 			list.add(dto);
@@ -68,7 +68,7 @@ public class DeptDAO {
 
 	
 	//특정 부서정보 가져오기 select *from dept_temp where deptno =?;
-	public DeptDTO gerRow(int deptno) {
+	public DeptDTO getRow(int deptno) {
 		Connection con =null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -81,7 +81,7 @@ public class DeptDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				dto= new DeptDTO();
-				dto.setDeptno(rs.getInt(1));
+				dto.setDeptNo(rs.getInt(1));
 				dto.setDname(rs.getString(2));
 				dto.setLoc(rs.getString(3));
 				
@@ -113,7 +113,7 @@ public class DeptDAO {
 			con = getConnection();
 			String sql = " insert into dept_temp(deptno,dname,loc)values(?,?,?)";
 					pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, dto.getDeptno());
+			pstmt.setInt(1, dto.getDeptNo());
 			pstmt.setString(2, dto.getDname());
 			pstmt.setString(3, dto.getLoc());			
 
@@ -169,7 +169,7 @@ public class DeptDAO {
 	//delete from dept_temp shere deptno=?
 	//delete ()
 	
-	public boolean deleteEmp(int deptno) {
+	public boolean delete(int deptno) {
 		
 		Connection con = null;
 		PreparedStatement pstmt=null;
@@ -196,6 +196,8 @@ public class DeptDAO {
 		}
 		return deleteFlag;
 	}
+
+	
 	
 	
 	
