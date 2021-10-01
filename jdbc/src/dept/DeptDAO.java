@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
-import com.sun.xml.internal.ws.Closeable;
 
 public class DeptDAO {
 	//empdao static,Connection//
@@ -118,6 +116,9 @@ public class DeptDAO {
 			pstmt.setInt(1, dto.getDeptno());
 			pstmt.setString(2, dto.getDname());
 			pstmt.setString(3, dto.getLoc());
+			
+			int result = pstmt.executeUpdate();
+			
 			if(result>0) {
 				flag=true;
 			}
@@ -132,18 +133,6 @@ public class DeptDAO {
 		}
 	}
 	return flag;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	}
 	
