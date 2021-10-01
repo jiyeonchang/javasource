@@ -19,7 +19,7 @@ public class DeptDAO {
 		}
 	}
 	public static Connection getConnection() {
-		String url = "jdbc:oracle:thin:@125.132.75.187:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user = "c##scott";
 		String password = "tiger";
 		Connection con = null;
