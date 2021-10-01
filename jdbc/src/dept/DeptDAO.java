@@ -142,7 +142,9 @@ public class DeptDAO {
 		PreparedStatement pstmt = null;
 		boolean flag =false;
 		
-		try {String sql = "update dept_temp set dname=? where deptno=?";
+		try {
+		String sql = "update dept_temp set dname=? where deptno=?";
+		con = getConnection();
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, dname);
 		pstmt.setInt(2, deptNo);
@@ -163,6 +165,7 @@ public class DeptDAO {
 				e2.printStackTrace();
 			}
 		}
+		return flag;
 	}
 	
 	
